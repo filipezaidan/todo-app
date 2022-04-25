@@ -2,18 +2,22 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
+    align-items: center;
+    gap: 10px;
     flex-direction: row;
     width: 100%;
-`
-
-export const InputCustom = styled.input`
     margin-top: 40px;
     width: 100%;
-    height: 55px;
+    height: 50px;
     border-radius: 5px;
     border: none;
     background: #fff;
-    padding: 20px;
-    font-size: 22px;
+    padding: 10px;
+`
+
+export const InputCustom = styled.input`
+    border: none;
+    height: 100%;
+    font-size: 20px;
     outline: none;
 `

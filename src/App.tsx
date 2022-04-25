@@ -1,8 +1,11 @@
+import TodoProvider from "./contexts/Todo"
 import Home from "./pages/Home"
 
 function App() {
   return (
-    <Home />
+    <TodoProvider>
+      <Home />
+    </TodoProvider>
   )
 }
 

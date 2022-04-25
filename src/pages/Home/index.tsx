@@ -7,6 +7,7 @@ function Home() {
     return (
         <S.Container>
             <S.Wrapper>
+
                 <Header />
                 <Input />
                 <List />
