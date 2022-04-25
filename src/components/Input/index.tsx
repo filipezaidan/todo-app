@@ -1,18 +1,17 @@
 import * as S from './styles'
 import { GiCircle as Circle } from 'react-icons/gi'
-import { useState, useEffect } from 'react'
-import { ITodo } from '../../@types/Todo';
+import { useState } from 'react'
 import { useContext } from 'react'
 import { TodoContext } from '../../contexts/Todo'
 
 function Input() {
-    const { saveTodo } = useContext(TodoContext);
+    const { addTodo } = useContext(TodoContext);
     const [todo, setTodo] = useState<string>('');
-    ;
+
 
     const handleInputKey = (e: any) => {
         if (e.keyCode === 13) {
-            saveTodo(todo)
+            addTodo(todo)
             setTodo('')
         }
     }

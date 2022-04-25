@@ -6,6 +6,7 @@ import * as S from './styles'
 function Home() {
     return (
         <S.Container>
+
             <S.Wrapper>
 
                 <Header />

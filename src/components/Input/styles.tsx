@@ -3,21 +3,22 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     flex-direction: row;
     width: 100%;
     margin-top: 40px;
     width: 100%;
-    height: 50px;
+    height: 55px;
     border-radius: 5px;
     border: none;
     background: #fff;
-    padding: 10px;
+    padding: 10px 20px;
 `
 
 export const InputCustom = styled.input`
     border: none;
     height: 100%;
+    width: 100%;
     font-size: 20px;
     outline: none;
 `

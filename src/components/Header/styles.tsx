@@ -1,12 +1,9 @@
 import styled from "styled-components";
-import img from '../../assets/bg-desktop-light.jpg'
 
 export const Container = styled.div`
     display: flex;
     flex-direction: row;
-    
 `
-
 export const Title = styled.h1`
     color: #fff;
     height: 100%;
@@ -21,6 +18,7 @@ export const ToogleThemeButton = styled.button`
     background-color: transparent;
     cursor: pointer;
     transition: all 0.2 ease-in-out;
+    
     &:hover{ 
         transform: scale(1.2);
         transition: all 0.2 ease-in-out;
