@@ -36,23 +36,27 @@ function TodoProvider({ children }: any) {
 
         if (controller !== 'All') {
             if (controller === 'Active') {
-                filter = todos.filter((todo) => todo.status === true)
-            } else {
                 filter = todos.filter((todo) => todo.status === false)
+            } else {
+                filter = todos.filter((todo) => todo.status === true)
             }
             setFilterTodos(filter)
         } else {
             setFilterTodos(todos);
         }
-
     };
+
+    const clearTodoCompleted = () => {
+        let filter = todos.filter((todo) => todo.status !== true)
+        setTodos(filter);
+    }
 
     useEffect(() => {
         setFilterTodos(todos)
     }, [todos])
 
     return (
-        <TodoContext.Provider value={{ todos, filterTodos, addTodo, delTodo, updateTodo, filterTodo }}>
+        <TodoContext.Provider value={{ todos, filterTodos, addTodo, delTodo, updateTodo, filterTodo, clearTodoCompleted }}>
             {children}
         </TodoContext.Provider>
     );

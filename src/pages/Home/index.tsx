@@ -5,6 +5,7 @@ import List from '../../components/List'
 import * as S from './styles'
 
 function Home() {
+
     return (
         <S.Container>
             <S.Wrapper>
@@ -12,7 +13,6 @@ function Home() {
                 <Header />
                 <Input />
                 <List />
-                <ControllerList />
 
             </S.Wrapper>
         </S.Container>

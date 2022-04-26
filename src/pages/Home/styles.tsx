@@ -17,12 +17,20 @@ export const Wrapper = styled.div`
         padding: 70px 200px 0 200px;
     }
 
-    @media screen and (max-width:768px) {
-        padding: 70px 100px 0 100px;
+    @media screen and (max-width:992px) {
+        padding: 70px 150px 0 150px;
     }
 
-    @media screen and (max-width:476px) {
+    @media screen and (max-width:768px) {
+        padding: 70px 80px 0 80px;
+    }
+
+    @media screen and (max-width:576px) {
         padding: 70px 50px 0 50px;
+    }
+
+    @media screen and (max-width:478px) {
+        padding: 70px 20px 0 20px;
     }
 
     @media screen and (max-width:375px) {

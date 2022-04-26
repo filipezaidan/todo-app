@@ -11,5 +11,5 @@ export type TodoContextType = {
     delTodo: (id: number) => void;
     updateTodo: (id: number) => void;
     filterTodo: (controller: string) => void;
-    clearFilter: () => void;
+    clearTodoCompleted: () => void;
 };

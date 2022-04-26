@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import { IoIosClose as IClose } from 'react-icons/io'
 
-
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
     margin-top: 25px;
-    box-shadow: rgba(0, 0, 0,0.2);
+    box-shadow: 0px 10px 26px -17px #000000;     
 `
 export const ItemList = styled.div`
     display: flex;

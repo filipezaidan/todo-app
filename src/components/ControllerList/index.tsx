@@ -4,7 +4,7 @@ import { TodoContext } from '../../contexts/Todo'
 import * as S from './styles'
 
 function ControllerList() {
-    const { todos, filterTodos, filterTodo } = useContext<TodoContextType>(TodoContext);
+    const { todos, filterTodos, filterTodo, clearTodoCompleted } = useContext<TodoContextType>(TodoContext);
     const [select, setSelect] = useState<string>('All')
 
     const handleSetButton = (controller: string) => {
@@ -27,7 +27,7 @@ function ControllerList() {
                     </S.ButtonWrapper>
 
                     <S.ButtonWrapper>
-                        <S.Button>Clear Completed</S.Button>
+                        <S.Button onClick={() => clearTodoCompleted()}>Clear Completed</S.Button>
                     </S.ButtonWrapper>
                 </S.Container>
             }
