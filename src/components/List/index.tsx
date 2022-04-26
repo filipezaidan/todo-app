@@ -2,23 +2,21 @@ import * as S from './styles'
 
 import { useContext } from 'react'
 import { TodoContext } from '../../contexts/Todo'
-import { ITodo } from '../../@types/Todo'
+import { ITodo, TodoContextType } from '../../@types/Todo'
 
 function List() {
-    const { todos, delTodo } = useContext(TodoContext)
-    console.log("todos:", todos)
-
-
+    const { filterTodos, delTodo, updateTodo } = useContext<TodoContextType>(TodoContext)
 
     return (
         <S.Container>
-            {todos.map((todo: ITodo) => (
-                <S.ItemList key={todo.id}>
-                    <div>
-                        <S.Checked type='checkbox' />
-                        <S.Title>{todo.title}</S.Title>
-                    </div>
-                    <S.CloseButton onClick={() => delTodo(todo.id)} />
+            {filterTodos.map(({ id, title, status }: ITodo) => (
+                <S.ItemList key={id}>
+                    <S.WrapperItem>
+                        <S.Checked onClick={() => updateTodo(id)} value={status} />
+                        <S.Title select={status}>{title}</S.Title>
+                    </S.WrapperItem>
+
+                    <S.CloseButton onClick={() => delTodo(id)} />
                 </S.ItemList>
             ))}
 

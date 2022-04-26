@@ -1,11 +1,11 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { ITodo, TodoContextType } from '../@types/Todo'
 
-export const TodoContext = createContext<TodoContextType | null>(null);
-
+export const TodoContext = createContext<TodoContextType | {}>({});
 
 function TodoProvider({ children }: any) {
     const [todos, setTodos] = useState<ITodo[]>([]);
+    const [filterTodos, setFilterTodos] = useState<ITodo[]>(todos);
 
     const addTodo = (title: string) => {
         const newTodo: ITodo = {
@@ -17,13 +17,42 @@ function TodoProvider({ children }: any) {
     }
 
     const delTodo = (id: number) => {
-        let todosFilter = todos.filter((item) => item.id !== id)
-
+        let todosFilter = todos.filter((todo) => todo.id !== id)
         setTodos(todosFilter)
     }
 
+    const updateTodo = (id: number) => {
+        todos.filter((todo) => {
+            if (todo.id === id) {
+                todo.status = !todo.status;
+                setTodos([...todos]);
+            }
+        });
+    };
+
+
+    const filterTodo = (controller: string) => {
+        let filter: ITodo[] = [];
+
+        if (controller !== 'All') {
+            if (controller === 'Active') {
+                filter = todos.filter((todo) => todo.status === true)
+            } else {
+                filter = todos.filter((todo) => todo.status === false)
+            }
+            setFilterTodos(filter)
+        } else {
+            setFilterTodos(todos);
+        }
+
+    };
+
+    useEffect(() => {
+        setFilterTodos(todos)
+    }, [todos])
+
     return (
-        <TodoContext.Provider value={{ todos, addTodo, delTodo }}>
+        <TodoContext.Provider value={{ todos, filterTodos, addTodo, delTodo, updateTodo, filterTodo }}>
             {children}
         </TodoContext.Provider>
     );

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { IoIosClose as IClose } from 'react-icons/io'
 
+
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
@@ -23,21 +24,19 @@ export const ItemList = styled.div`
         border-radius: 5px 5px 0px 0px;
     }  
 
-    /* &:hover {
-        cursor: pointer;
-    } */
+    &:last-child {
+        border-radius: 0px 0px 5px 5px ;
+    }  
 `
+export const WrapperItem = styled.div``
 export const Title = styled.span`
-    font-size: 21px;
-    color: #000;
+    font-size: 18px;
+    color: ${(props: { select: boolean }) => props.select ? '#757575' : '#000'};
     font-weight: 400;
+    text-decoration: ${(props: { select: boolean }) => props.select ? 'line-through' : 'none'};
 `
-
-export const Checked = styled.input`
-    
-
+export const Checked = styled.input.attrs({ type: 'checkbox' })`
 `
-
 export const CloseButton = styled(IClose)`
     width: 30px;
     height: 30px;

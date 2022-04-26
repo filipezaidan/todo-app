@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { TodoContext } from '../../contexts/Todo'
 
 function Input() {
-    const { addTodo } = useContext(TodoContext);
+    const { addTodo } = useContext<TodoContextType>(TodoContext);
     const [todo, setTodo] = useState<string>('');
 
 
