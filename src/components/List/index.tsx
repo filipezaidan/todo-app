@@ -13,7 +13,7 @@ function List() {
             {filterTodos.map(({ id, title, status }: ITodo) => (
                 <S.ItemList key={id}>
                     <S.WrapperItem>
-                        <S.Checked onClick={() => updateTodo(id)} checked={status} />
+                        <S.Checked id={id.toString()} onClick={() => updateTodo(id)} checked={status} />
                         <S.Title select={status}>{title}</S.Title>
                     </S.WrapperItem>
 

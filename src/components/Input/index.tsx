@@ -3,14 +3,14 @@ import { GiCircle as Circle } from 'react-icons/gi'
 import { useState } from 'react'
 import { useContext } from 'react'
 import { TodoContext } from '../../contexts/Todo'
+import { TodoContextType } from '../../@types/Todo'
 
 function Input() {
     const { addTodo } = useContext<TodoContextType>(TodoContext);
     const [todo, setTodo] = useState<string>('');
 
-
     const handleInputKey = (e: any) => {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && todo !== "") {
             addTodo(todo)
             setTodo('')
         }
@@ -19,7 +19,6 @@ function Input() {
     return (
         <S.Container>
             <Circle color="#d9d9d9" size={25} />
-
             <S.InputCustom
                 placeholder="Create a new todo..."
                 value={todo}

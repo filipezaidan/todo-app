@@ -13,8 +13,8 @@ export const Container = styled.div`
     border: none;
     background: #fff;
     padding: 10px 20px;
+    box-shadow: 0px 10px 26px -17px #000000;
 `
-
 export const InputCustom = styled.input`
     border: none;
     height: 100%;
