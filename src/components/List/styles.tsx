@@ -54,7 +54,6 @@ export const Checked = styled.input.attrs({ type: 'checkbox' })`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
     }
 
     &:checked::before{

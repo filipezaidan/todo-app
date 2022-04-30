@@ -52,8 +52,10 @@ function TodoProvider({ children }: any) {
     }
 
     useEffect(() => {
+        console.log(todos)
         setFilterTodos(todos)
     }, [todos])
+
 
     return (
         <TodoContext.Provider value={{ todos, filterTodos, addTodo, delTodo, updateTodo, filterTodo, clearTodoCompleted }}>
