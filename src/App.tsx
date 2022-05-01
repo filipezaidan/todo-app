@@ -1,6 +1,7 @@
-import TodoProvider from "./contexts/Todo"
+//Pages 
 import Home from "./pages/Home"
-import { DragDropContext } from 'react-beautiful-dnd'
+//Contexts
+import TodoProvider from "./contexts/Todo"
 
 function App() {
   return (

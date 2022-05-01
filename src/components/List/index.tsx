@@ -1,14 +1,17 @@
+//Libraries
+import { useContext, useEffect, useState } from 'react'
+import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
+//Components
+import ControllerList from '../ControllerList'
+//Contexts
+import { TodoContext } from '../../contexts/Todo'
+//Interfaces
+import { ITodo, TodoContextType } from '../../@types/Todo'
+//Styles
 import * as S from './styles'
 
-import { useContext, useEffect, useLayoutEffect, useState } from 'react'
-import { TodoContext } from '../../contexts/Todo'
-import { ITodo, TodoContextType } from '../../@types/Todo'
-import ControllerList from '../ControllerList'
-import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd'
-import { resetServerContext } from "react-beautiful-dnd"
-
 function List() {
-    const { filterTodos, delTodo, updateTodo } = useContext<TodoContextType>(TodoContext)
+    const { filterTodos, delTodo, updateTodo, setTodos: setListTodos } = useContext<TodoContextType>(TodoContext)
     const [todos, setTodos] = useState<ITodo[]>(filterTodos)
 
 
@@ -19,13 +22,13 @@ function List() {
         const [reorderedItem] = items.splice(result.source.index, 1);
         items.splice(result.destination.index, 0, reorderedItem);
 
-        setTodos(items);
+        setListTodos(items);
     }
 
     useEffect(() => {
         setTodos(filterTodos)
-        resetServerContext()
     }, [filterTodos])
+
     return (
         <DragDropContext onDragEnd={(e) => handleOnDragEnd(e)}>
             <Droppable droppableId={String(todos)}>
@@ -57,4 +60,4 @@ function List() {
     )
 }
 
-export default List
+export default List;

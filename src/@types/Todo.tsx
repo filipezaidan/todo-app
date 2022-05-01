@@ -12,4 +12,6 @@ export type TodoContextType = {
     updateTodo: (id: number) => void;
     filterTodo: (controller: string) => void;
     clearTodoCompleted: () => void;
+    setFilterTodos: React.Dispatch<React.SetStateAction<ITodo[]>>;
+    setTodos: React.Dispatch<React.SetStateAction<ITodo[]>>;
 };

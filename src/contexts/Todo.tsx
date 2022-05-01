@@ -1,4 +1,6 @@
+//Libraries
 import { createContext, useState, useEffect } from 'react';
+//Interfaces
 import { ITodo, TodoContextType } from '../@types/Todo'
 
 export const TodoContext = createContext<TodoContextType | {}>({});
@@ -58,7 +60,18 @@ function TodoProvider({ children }: any) {
 
 
     return (
-        <TodoContext.Provider value={{ todos, filterTodos, addTodo, delTodo, updateTodo, filterTodo, clearTodoCompleted }}>
+        <TodoContext.Provider value={{
+            todos,
+            filterTodos,
+            addTodo,
+            delTodo,
+            updateTodo,
+            filterTodo,
+            clearTodoCompleted,
+            setFilterTodos,
+            setTodos
+        }}
+        >
             {children}
         </TodoContext.Provider>
     );
