@@ -5,11 +5,15 @@ import List from '../../components/List'
 //Styles
 import * as S from './styles'
 
-function Home() {
+interface HomeProps {
+    setTheme: () => void
+}
+
+function Home({ setTheme }: HomeProps) {
     return (
         <S.Container>
             <S.Wrapper>
-                <Header />
+                <Header setTheme={setTheme} />
                 <Input />
                 <List />
             </S.Wrapper>

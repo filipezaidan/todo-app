@@ -11,14 +11,20 @@ export const Container = styled.div`
     height: 55px;
     border-radius: 5px;
     border: none;
-    background: #fff;
+    background: ${({ theme }) => theme.colors.primary};
     padding: 10px 20px;
     box-shadow: 0px 10px 26px -17px #000000;
 `
 export const InputCustom = styled.input`
     border: none;
+    color: ${({ theme }) => theme.colors.text};
     height: 100%;
     width: 100%;
     font-size: 20px;
     outline: none;
+    background: transparent;
+    ::-webkit-input-placeholder {
+    color: ${({ theme }) => theme.colors.placeholder};
+     }
+    
 `

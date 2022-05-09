@@ -1,10 +1,13 @@
 import styled from 'styled-components';
-import img from '../../assets/bg-desktop-light.jpg'
+import imgLight from '../../assets/bg-desktop-light.jpg'
+import imgDark from '../../assets/bg-desktop-dark.jpg'
 
 export const Container = styled.div`
+
+
     height: 300px;
     width: 100%;
-    background-image: url(${img});
+    background-image:  url(${props => props.theme.title === 'light' ? imgLight : imgDark});
     background-repeat: no-repeat;
     background-size: cover;
 `

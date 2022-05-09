@@ -54,7 +54,7 @@ function TodoProvider({ children }: any) {
     }
 
     useEffect(() => {
-        console.log(todos)
+        // console.log(todos)
         setFilterTodos(todos)
     }, [todos])
 

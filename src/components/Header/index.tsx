@@ -1,12 +1,20 @@
 import * as S from './styles'
 import { IoMdMoon } from 'react-icons/io'
 
-function Header() {
+interface HeaderProps {
+    setTheme: () => void
+}
+
+function Header({ setTheme }: HeaderProps) {
     return (
         <S.Container>
             <S.Title>T O D O</S.Title>
-            <S.ToogleThemeButton>
-                <IoMdMoon size={25} color='#fff' />
+            <S.ToogleThemeButton onClick={setTheme}>
+                <IoMdMoon
+                    size={25}
+                    color='#fff'
+
+                />
             </S.ToogleThemeButton>
         </S.Container>
     )

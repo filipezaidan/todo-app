@@ -31,7 +31,7 @@ function List() {
 
     return (
         <DragDropContext onDragEnd={(e) => handleOnDragEnd(e)}>
-            <Droppable droppableId={String(todos)}>
+            <Droppable droppableId={String(todos) || 'todoId'}>
                 {(provided) => (
                     <S.Container
                         ref={provided.innerRef}
@@ -42,7 +42,7 @@ function List() {
                                 {(provided) => (
                                     <S.ItemList ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                                         <S.WrapperItem>
-                                            <S.Checked id={id.toString()} onClick={() => updateTodo(id)} checked={status} />
+                                            <S.Checked id={id.toString()} onChange={() => updateTodo(id)} checked={status} />
                                             <S.Title select={status}>{title}</S.Title>
                                         </S.WrapperItem>
 

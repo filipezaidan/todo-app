@@ -14,7 +14,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background: #fff;
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 0 0 5px 5px;
 `
 export const Text = styled.span`

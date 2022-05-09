@@ -15,9 +15,9 @@ export const ItemList = styled.div`
     justify-content: space-between;
     width: 100%;
     height: 55px;
-    background: #fff;
+    background: ${({ theme }) => theme.colors.primary};
     padding: 20px;
-    border-bottom: 1px solid #e6e5ea;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.fourth};
 
     &:first-child {
         border-radius: 5px 5px 0px 0px;
@@ -35,7 +35,8 @@ export const WrapperItem = styled.div`
 `
 export const Title = styled.span`
     font-size: 18px;
-    color: ${(props: { select: boolean }) => props.select ? '#757575' : '#000'};
+    /* color: ${({ theme }) => theme.colors.text}; */
+    color: ${(props: { select: boolean }) => props.select ? props.theme.colors.third : props.theme.colors.text};
     font-weight: 400;
     text-decoration: ${(props: { select: boolean }) => props.select ? 'line-through' : 'none'};
 `
@@ -48,7 +49,7 @@ export const Checked = styled.input.attrs({ type: 'checkbox' })`
     position: absolute;
     height: 23px;
     width: 23px;
-    background-color: #fafafa;
+    background-color: ${({ theme }) => theme.colors.primary};
     border: 1px solid  #757575;
     border-radius: 50%;
     top: 50%;
@@ -58,7 +59,7 @@ export const Checked = styled.input.attrs({ type: 'checkbox' })`
 
     &:checked::before{
         background: linear-gradient(120deg,hsl(192, 100%, 67%),hsl(280, 87%, 65%));
-        border: 1px #fafafa;
+        border: 1px ${({ theme }) => theme.colors.primary};
     }
 
     &:checked::after{
