@@ -28,7 +28,7 @@
  <a href="#-layout">Layout</a> • 
  <a href="#-execute">Execute</a> • 
  <a href="#-tecnologies">Technologies</a> • 
- <a href="#-autor">Author</a> • 
+ <a href="#-author">Author</a> • 
  <a href="#-license">License</a>
 </p>
 
